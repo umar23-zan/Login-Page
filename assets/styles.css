@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: url(pexels-jplenio-1103970.jpg) no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.container {
+  display: flex;
+  width: 60%;
+  height: 60%;
+  max-width: 1200px;
+  background-color: transparent;
+  backdrop-filter: blur(15px);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  left: 50%;
+}
+
+.login-column{
+  width: 60%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.illustration{
+  width: 40%;
+  background: transparent;
+  padding: 95px;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0052cc;
+}
+svg {
+  height: 50px;
+  width: 50px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+p{
+  font-size:16px;
+  font-weight: bold;
+  margin: 10px;
+}
+input[type="text"], input[type="password"] {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+}
+.pass-word{
+  position: relative;
+}
+.password-toggle-icon {
+  position: absolute;
+  top: 70%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.password-toggle-icon i {
+  font-size: 18px;
+  line-height: 1;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.password-toggle-icon i:hover {
+  color: #000;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.options a {
+  color: #0052cc;
+  text-decoration: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #032a64;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #043754;
+}
+
+.branding-column {
+  background-color: #e3f2fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.illustration img {
+  position: absolute;
+  top: 15%;
+  width: 100px;
+  border-radius: 50px;
+}
+.p1{
+  position: relative;
+  top: 25%;
+  right: 25px;
+  font-size: 60px;
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+  color: #043754;
+}

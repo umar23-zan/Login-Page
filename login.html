@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zangroups Login</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-column">
+          <div class="login-box">
+              <h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192l42.7 0c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0L21.3 320C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7l42.7 0C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3l-213.3 0zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352l117.3 0C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7l-330.7 0c-14.7 0-26.7-11.9-26.7-26.7z"/></svg></h2>
+              <form action="" method="POST">
+                  <div class="user-name">
+                      <p>Username</p>
+                      <input type="text" name="username1" placeholder="Enter Your Username or Email" autocomplete="off" >
+                  </div>
+                  <div class="pass-word">
+                    <p>Password</p>
+                      <input type="password" 
+                      name ="password1"
+                      id="password" placeholder="Password" autocomplete="off" >
+                      <span class="password-toggle-icon"><i class="fas fa-eye"></i></span>
+                  </div>
+                  <div class="options">
+                      <label>
+                          <input type="checkbox"
+                          name="rememberMe"
+                          id="rememberMe"> Remember Me
+                      </label>
+                      <a href="/forgot-password">Forgot Password?</a>
+                  </div>
+                  <button type="submit" class="submit-btn">Login</button>
+              </form>
+          </div>
+      </div>
+
+      
+          <div class="illustration">
+              <img src="logo.jpg" alt="Brand Illustration" class="image1">
+              <p class="p1">Zan<br>Groups</p>
+          </div>
+      
+  </div>
+  <script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.querySelector("form");
+        const usernameInput = document.querySelector("input[type='text'");
+        const passwordInput = document.querySelector("input[type='password']");
+        
+        form.addEventListener("submit", function(event) {
+            // Clear previous error messages
+            clearErrors();
+
+            let isValid = true;
+
+            // Validate username
+            if (usernameInput.value.trim() === "") {
+                showError(usernameInput, "Username is required");
+                isValid = false;
+            }
+
+            // Validate password
+            if (passwordInput.value.trim() === "") {
+                showError(passwordInput, "Password is required");
+                isValid = false;
+            }
+
+            // Prevent form submission if validation fails
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+
+        function showError(input, message) {
+            const parent = input.parentElement;
+            const errorElement = document.createElement("div");
+            errorElement.className = "error-message";
+            errorElement.style.color = "red";
+            errorElement.textContent = message;
+            parent.appendChild(errorElement);
+        }
+
+        function clearErrors() {
+            const errorMessages = document.querySelectorAll(".error-message");
+            errorMessages.forEach(error => error.remove());
+        }
+    });
+
+
+    const passwordField = document.getElementById("password");
+    const togglePassword = document.querySelector(".password-toggle-icon i");
+
+    togglePassword.addEventListener("click", function () {
+    if (passwordField.type === "password") {
+    passwordField.type = "text";
+    togglePassword.classList.remove("fa-eye");
+    togglePassword.classList.add("fa-eye-slash");
+    } else {
+    passwordField.type = "password";
+    togglePassword.classList.remove("fa-eye-slash");
+    togglePassword.classList.add("fa-eye");
+    }
+});
+  </script>
+  </body>
+</html>
